@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  db:
+    container_name: postgres-api-cursos
+    image: postgres:14-alpine
+    restart: always
+    volumes:
+     - pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: faculdade
+    ports:
+      - 5432:5432
+volumes:
+  pgdata:
